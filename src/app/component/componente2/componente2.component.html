@@ -1,0 +1,12 @@
+<!--<div [ngClass]="set_color ? 'fondo_azul' : 'fondo_rojo'" (click)="changeColor()">
+</div>-->
+
+<div *ngIf="color_white_box" class="color_white" (click)="changeColorBox()"></div>
+
+<div *ngIf="color_blue_box && !limpiarInput" class="color_blue" (click)="changeColorBox()"></div>
+
+<div *ngIf="color_red_box && !limpiarInput" class="color_red" (click)="changeColorBox()"></div>
+
+<div *ngIf="color_yellow_box && !limpiarInput" class="color_yellow" (click)="changeColorBox()"></div>
+
+<div *ngIf="color_green_box && !limpiarInput" class="color_green" (click)="changeColorBox()"></div>

@@ -1,0 +1,60 @@
+.beside_box {
+    display: flex;
+}
+
+.full_content {
+  display: flex;
+  padding: 5%;
+
+
+}
+
+.nav_logo{
+  text-align: center;
+}
+ 
+.circle {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(253, 253, 253);
+    border-radius: 50%;
+    display: inline-block;
+    margin: 10px;
+  }
+  
+.circle:hover {
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+
+.blue {
+    background-color: #78C9A4;
+  }
+.red {
+    background-color: #B9252E;
+  }
+.yellow {
+    background-color: #126E70;
+  }
+.green {
+    background-color: #528F22;
+  }
+
+  .button {
+    background-color: #fafafa;
+    border: none;
+    color: rgb(27, 5, 5);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+.tools{
+  width: 350px;
+  margin-left: 70px;
+
+}
