@@ -13,6 +13,7 @@ export class MainwindowComponent implements OnInit {
   ngOnInit(): void {
     this.FirstTestService.getData().subscribe(data=>{
       console.log("Esto es data: ", data)
+      console.log("Esto es data: ", data)
     }, err => {
       console.log("Error ocurrido", err)
     }
