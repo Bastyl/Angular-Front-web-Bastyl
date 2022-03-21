@@ -1,13 +1,23 @@
-<head>
 
-</head>
-<body>
-    
+<div class="pokecontent">
+    <mat-card>
     <div class="nav_logo">
-        <img src="./../../../assets/images/pokelogo.png" />        
+        <img class="imagen1" src="./../../../assets/images/pokelogo.png"/>        
+    </div>
+
+    <hr>
+
+    <div class="instrucciones">
+        <h2>Instrucciones:</h2>
+        <p>Este componente trata de intentar dibujar a Baulbasour de la misma manera que sale en la imagen, para esto debes seleccionar un color y pinchar 
+            en un cuadro de la pizarra. Para empezar de nuevo solo debes seleccionar el boton Limpiar.
+        </p>
     </div>
     
+    <hr>
+
     <div class="full_content">
+        <mat-card class="colormatcard2">
     <div class="centering_boxes">
         <div class="beside_box">
             <app-componente2
@@ -991,16 +1001,43 @@
         </div>
 
     </div>
-    <div class="tools">
+</mat-card>
+    
+<mat-card class="colormatcard3">
+    <div>
         <div class="circle" (click)="whiteSelected()"></div>
         <div class="circle blue" (click)="blueSelected()"></div>
         <div class="circle red" (click)="redSelected()"></div>
         <div class="circle yellow" (click)="yellowSelected()"></div>
         <div class="circle green" (click)="greenSelected()"></div>
-        <img src="./../../../assets/images/pokedraw.png" alt="Oficina onclick" class="logo__image-onclick" />
-        <button class="button" (click)="limpiarPizarra()">Limpiar</button>
     </div>
+    <div>
+        <img src="./../../../assets/images/pokedraw.png" alt="Oficina onclick" class="logo__image-onclick" />
+    </div>
+        <button class="button" (click)="limpiarPizarra()">Limpiar</button>
+    
+</mat-card>
 </div>
 
-</body>
+<hr>
+<div class="instrucciones">
+    <h2>Notas:</h2>
+    <p>
+        - Esta funcionalidad consta de dos componentes, el componente hijo equivale a 1 pixel de la pizarra en donde se dibuja,
+        mientras que el componente padre, es la compisicion de todos los pixeles necesarios para crear la pantalla, es decir 10x12 = 120 componentes hijos los cuales fueron reutilizados.
+    </p>
+    <p>
+        - Se planea implementar un sistema de tiempo para esta funcionalidad, esto es, que se tome el tiempo que demoran los usuarios al terminar el dibujo, para asi, tener un ranking top 5 de usuarios
+        que demoraron menos tiempo terminar la tarea.
+    </p>
+    <h2>
+        Herramientas utilizadas para esta funcionalidad:
+    </h2>
+    <h2>
+        Dificultad:
+    </h2>
+</div>
+
+</mat-card>
+</div>
 
