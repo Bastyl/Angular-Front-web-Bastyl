@@ -20,13 +20,13 @@ export class SidebarComponent implements OnInit {
   level1Click(){
     this.level1 = true;
     this.level2 = false;
-    this.router.navigate(['/level1']);
+    this.router.navigate(['/funct/level1']);
   }
 
   level2Click(){
     this.level2 = true;
     this.level1 = false;
-    this.router.navigate(['/level2']);
+    this.router.navigate(['funct/level2']);
   }
 
  

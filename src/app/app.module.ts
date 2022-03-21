@@ -14,6 +14,12 @@ import { Juego2Component } from './component/juego2/juego2.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import { FullpageComponent } from './maincomponent/fullpage/fullpage.component';
+import { TitlepageComponent } from './maincomponent/titlepage/titlepage.component';
+import { ContentpageComponent } from './maincomponent/contentpage/contentpage.component';
+import { HomecomponentComponent } from './windowcontent/homecomponent/homecomponent.component';
+import { FunctionalitiescomponentComponent } from './windowcontent/functionalitiescomponent/functionalitiescomponent.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,12 @@ import { HttpClientModule } from '@angular/common/http';
     SidebarComponent,
     MainwindowComponent,
     GatoComponent,
-    Juego2Component
+    Juego2Component,
+    FullpageComponent,
+    TitlepageComponent,
+    ContentpageComponent,
+    HomecomponentComponent,
+    FunctionalitiescomponentComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     DragDropModule,
     MatToolbarModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
