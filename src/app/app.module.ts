@@ -20,6 +20,12 @@ import { ContentpageComponent } from './maincomponent/contentpage/contentpage.co
 import { HomecomponentComponent } from './windowcontent/homecomponent/homecomponent.component';
 import { FunctionalitiescomponentComponent } from './windowcontent/functionalitiescomponent/functionalitiescomponent.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+
+
 
 @NgModule({
   declarations: [
@@ -44,7 +50,11 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatIconModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    FormsModule,
+    MatSelectModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
