@@ -1,2 +1,63 @@
-Hello world Juego 2
+<div class="cardcontent">
+<mat-card>
 
+  <h1>Ingresa o busca el libro que te guste!</h1>
+
+  <mat-card class="matcard1">
+    <h2>Ingresa un libro</h2>
+    <div class="div1">
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="div1-width" appearance="fill">
+        <mat-label>Nombre del Libro</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+      <td><mat-form-field class="div2-width" appearance="fill">
+        <mat-label>Autor del libro</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+      <td>
+        <mat-form-field class="div3-width" appearance="fill">
+          <mat-label>Numero de paginas</mat-label>
+          <input matInput type="number">
+        </mat-form-field>
+      </td>
+    </tr></table>
+    </div>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Select</mat-label>
+      <mat-select>
+        <mat-option value="one">Literatura</mat-option>
+        <mat-option value="two">Novela</mat-option>
+        <mat-option value="one">Historia</mat-option>
+        <mat-option value="two">Ciencia Ficcion</mat-option>
+        <mat-option value="one">Terror</mat-option>
+        <mat-option value="two">Crecimiento personal</mat-option>
+        <mat-option value="two">Otro</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Resena</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+
+    <div class="div-button">
+      <div class="div-content-button">
+        <button mat-button color="primary">Guardar</button>
+      </div>
+      <div class="div-content-button">
+        <button mat-button color="primary">Limpiar</button>
+      </div>
+    </div>
+
+
+  </mat-card>
+  <br>
+  <mat-card class="matcard1">
+    <h2>Libros ingresados</h2>
+
+  </mat-card>
+      
+</mat-card>
+</div>
