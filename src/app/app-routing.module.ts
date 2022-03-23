@@ -4,21 +4,6 @@ import { HomecomponentComponent } from './windowcontent/homecomponent/homecompon
 import { FunctionalitiescomponentComponent } from './windowcontent/functionalitiescomponent/functionalitiescomponent.component';
 import { Componente1Component} from './component/componente1/componente1.component';
 import { Juego2Component} from './component/juego2/juego2.component';
-/*
-const routes: Routes = [
-  {
-    path: 'home',
-    component: HomecomponentComponent,
-  },
-  {
-    path: 'funct',
-    component: FunctionalitiescomponentComponent,
-  },
-  {
-    path: 'funct/level1',
-    component: Componente1Component,
-  },
-];*/
 
 const routes: Routes = [
   {

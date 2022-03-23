@@ -1,0 +1,85 @@
+.bodyimage {
+    background: #2a2242;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+.separator{
+    height: 40%;
+}
+
+.title {
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+  .body {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+  }
+
+  .boton-transparente {
+    border-radius: 5px;
+    display: inline-block;
+    width: 200px;
+    padding: 8px;
+    color: #fff;
+    border: 2px solid #fff;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    transition: background-color 0.2s ease-out,
+                color 0.2s ease-out;
+  }
+  .boton-transparente:hover,
+  .boton-transparente:active {
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s ease-in,
+                color 0.3s ease-in;
+  }
+
+  .resumen{
+      margin-top: 5%;
+      background-color: green;
+      height: 50%;
+      width: 100%;
+      display: flex;
+  }
+  .imagen-resumen{
+    background-color: bisque;
+    height: 100%;
+    width: 70%;
+}
+
+  .texto-resumen{
+      background-color: aqua;
+      height: 100%;
+      width: 100%;
+  }
+
+  .title2{
+    font-family: "Segoe UI",Helvetica,Arial,sans-serif;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+  }
+
+  .text2{
+    font-family: "Segoe UI",Helvetica,Arial,sans-serif;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+  }
+
+  .thiswebsite{
+    margin-top: 5%;
+    background-color: green;
+    height: 50%;
+    width: 100%;
+    display: flex;
+  }
