@@ -45,14 +45,12 @@ const NAMES: string[] = [
   'Elizabeth',
 ];
 
-
 @Component({
-  selector: 'app-juego2',
-  templateUrl: './juego2.component.html',
-  styleUrls: ['./juego2.component.css']
+  selector: 'app-bookform',
+  templateUrl: './bookform.component.html',
+  styleUrls: ['./bookform.component.css']
 })
-
-export class Juego2Component implements OnInit, AfterViewInit {
+export class BookformComponent implements OnInit, AfterViewInit {
 
   displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
   dataSource: MatTableDataSource<UserData>;
@@ -105,5 +103,3 @@ function createNewUser(id: number): UserData {
   };
 
 }
-
-

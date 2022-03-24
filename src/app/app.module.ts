@@ -2,13 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Componente1Component } from './component/componente1/componente1.component';
-import { Componente2Component } from './component/componente2/componente2.component';
-import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GatoComponent } from './component/gato/gato.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import { Juego2Component } from './component/juego2/juego2.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,21 +21,30 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import { SidebarfunctComponent } from './windowcontent/sidebarfunct/sidebarfunct.component';
+import { BulbasaurmainComponent } from './component/bulbasaur/bulbasaurmain/bulbasaurmain.component';
+import { BulbasaursecondComponent } from './component/bulbasaur/bulbasaursecond/bulbasaursecond.component';
+import { BookformComponent } from './component/bookform/bookform.component';
+import { Step1pizzaComponent } from './component/pizzaform/step1pizza/step1pizza.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    Componente1Component,
-    Componente2Component,
-    SidebarComponent,
     GatoComponent,
-    Juego2Component,
     FullpageComponent,
     TitlepageComponent,
     ContentpageComponent,
     HomecomponentComponent,
-    FunctionalitiescomponentComponent
+    FunctionalitiescomponentComponent,
+    SidebarfunctComponent,
+    BulbasaurmainComponent,
+    BulbasaursecondComponent,
+    BookformComponent,
+    Step1pizzaComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +61,10 @@ import {MatSortModule} from '@angular/material/sort';
     MatButtonModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

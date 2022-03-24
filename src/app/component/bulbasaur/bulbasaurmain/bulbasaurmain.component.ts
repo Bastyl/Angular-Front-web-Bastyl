@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-componente1',
-  templateUrl: './componente1.component.html',
-  styleUrls: ['./componente1.component.css']
+  selector: 'app-bulbasaurmain',
+  templateUrl: './bulbasaurmain.component.html',
+  styleUrls: ['./bulbasaurmain.component.css']
 })
-export class Componente1Component implements OnInit {
-  
+export class BulbasaurmainComponent implements OnInit {
+
   color_white: boolean = true;
   color_blue: boolean = false;
   color_red: boolean = false;
@@ -76,4 +76,5 @@ export class Componente1Component implements OnInit {
     this.color_yellow = false;
     this.color_green = false;
   }
+
 }

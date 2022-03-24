@@ -1,11 +1,11 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-componente2',
-  templateUrl: './componente2.component.html',
-  styleUrls: ['./componente2.component.css']
+  selector: 'app-bulbasaursecond',
+  templateUrl: './bulbasaursecond.component.html',
+  styleUrls: ['./bulbasaursecond.component.css']
 })
-export class Componente2Component implements OnInit, OnChanges {
+export class BulbasaursecondComponent implements OnInit, OnChanges {
 
   @Input() public whiteInput: boolean = false;
   @Input() public blueInput: boolean = false;
@@ -83,5 +83,4 @@ export class Componente2Component implements OnInit, OnChanges {
 
     }
   }
-
 }
