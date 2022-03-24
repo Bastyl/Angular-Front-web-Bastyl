@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomecomponentComponent } from './windowcontent/homecomponent/homecomponent.component';
 import { FunctionalitiescomponentComponent } from './windowcontent/functionalitiescomponent/functionalitiescomponent.component';
-import { Componente1Component} from './component/componente1/componente1.component';
-import { Juego2Component} from './component/juego2/juego2.component';
+import { BulbasaurmainComponent} from './component/bulbasaur/bulbasaurmain/bulbasaurmain.component';
+import { BookformComponent} from './component/bookform/bookform.component';
+import {Step1pizzaComponent } from './component/pizzaform/step1pizza/step1pizza.component'
 
 const routes: Routes = [
   {
@@ -15,12 +16,17 @@ const routes: Routes = [
     component: FunctionalitiescomponentComponent,
     children: [{
       path: 'level1',
-      component: Componente1Component,
+      component: BulbasaurmainComponent,
     },
     {
       path: 'level2',
-      component: Juego2Component,
-    }]
+      component: BookformComponent,
+    },
+    {
+      path: 'level3',
+      component: Step1pizzaComponent,
+    }
+  ]
   }
 ];
 
