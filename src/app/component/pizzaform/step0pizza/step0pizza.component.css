@@ -1,0 +1,19 @@
+.cardcontent{
+    padding-top: 8px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #ffffff;
+    border-radius: 8px;
+  }
+
+  .imagemat{
+    background-image: url("../../../../assets/images/pizza.jpg");
+    background-color: #cccccc;
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+  }
