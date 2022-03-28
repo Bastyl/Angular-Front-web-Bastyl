@@ -29,7 +29,9 @@ import { Step1pizzaComponent } from './component/pizzaform/step1pizza/step1pizza
 import {MatRadioModule} from '@angular/material/radio';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-
+import { Step0pizzaComponent } from './component/pizzaform/step0pizza/step0pizza.component';
+import { Step2pizzaComponent } from './component/pizzaform/step2pizza/step2pizza.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     BulbasaurmainComponent,
     BulbasaursecondComponent,
     BookformComponent,
-    Step1pizzaComponent
+    Step1pizzaComponent,
+    Step0pizzaComponent,
+    Step2pizzaComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +68,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatSortModule,
     MatRadioModule,
     ReactiveFormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

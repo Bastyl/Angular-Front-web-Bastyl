@@ -1,0 +1,31 @@
+.matacordionwidth{
+ width: 900px;
+ border-bottom: solid;
+ border-color:  #eeecec;
+ color: white;
+ background-color: black;
+ font-family: 'Futura', sans-serif;
+ 
+}
+
+.matacordionwidth:hover{
+    background-color: rgb(45, 46, 46);
+}
+
+.fontstyle{
+    color: white;
+    font-family: 'Futura', sans-serif;
+    width: 50%;
+}
+
+::ng-deep .mat-expansion-indicator::after {
+    color:  #eeecec;
+}
+
+.contentpanel{
+    width: 100%;
+    display: flex;
+}
+.paneldiv{
+    width: 50%;
+}

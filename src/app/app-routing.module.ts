@@ -4,7 +4,7 @@ import { HomecomponentComponent } from './windowcontent/homecomponent/homecompon
 import { FunctionalitiescomponentComponent } from './windowcontent/functionalitiescomponent/functionalitiescomponent.component';
 import { BulbasaurmainComponent} from './component/bulbasaur/bulbasaurmain/bulbasaurmain.component';
 import { BookformComponent} from './component/bookform/bookform.component';
-import {Step1pizzaComponent } from './component/pizzaform/step1pizza/step1pizza.component'
+import {Step0pizzaComponent } from './component/pizzaform/step0pizza/step0pizza.component'
 
 const routes: Routes = [
   {
@@ -24,7 +24,7 @@ const routes: Routes = [
     },
     {
       path: 'level3',
-      component: Step1pizzaComponent,
+      component: Step0pizzaComponent,
     }
   ]
   }
