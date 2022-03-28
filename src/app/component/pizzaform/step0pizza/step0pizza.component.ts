@@ -7,9 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Step0pizzaComponent implements OnInit {
 
+  opcionPedido = false;
+  opcionBoleta = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  hacerPedido(){
+    this.opcionBoleta = false;
+    this.opcionPedido = true;
+  }
+
+  verBoletas(){
+    this.opcionPedido = false;
+    this.opcionBoleta = true;
+  }
+
+  volverInicio(){
+    this.opcionBoleta = false;
+    this.opcionPedido = false;
   }
 
 }

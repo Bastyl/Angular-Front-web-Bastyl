@@ -1,1 +1,37 @@
-<p>step2pizza works!</p>
+<mat-accordion *ngFor="let bol of boleta">
+    <mat-expansion-panel class="matacordionwidth" (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fontstyle">
+          Titular:{{" "+bol.Nombre+" "}}{{bol.Apellido}}
+        </mat-panel-title>
+        <mat-panel-description class="fontstyle">
+          Fecha:{{" "+bol.Fecha+" "}}Pedido: {{" "+bol.Tipo}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="contentpanel">
+          <div class="paneldiv">
+            <p>Tipo de pizza:</p>
+            <ul>
+                <li>Tipo de masa: {{bol.Masa}}</li>
+                <li>Tipo de Proteina:{{bol.Proteina}}</li>
+                <li>Tipo de Salsa: {{bol.Salsa}}</li>
+                <li>Cocacola: x{{bol.Cocacola}}</li>
+                <li>Sprite: x{{bol.Sprite}}</li>
+            </ul>
+          </div>
+          <div class="paneldiv">
+            <p>Ingredientes de la pizza:</p>
+            <ul *ngFor="let ing of bol.Agregados">
+                <li>{{ing}}</li>
+            </ul>
+          </div>
+      </div>
+      <p>Cantidad del pedido: x{{bol.Cantidad}}</p>
+      <p>Direccion: {{bol.Direccion}}</p>
+      <p>Celular: {{bol.Celular}}</p>
+      <p>Nota: {{bol.Nota}}</p>
+      <h2>Monto: ${{bol.Monto}}</h2>
+
+    </mat-expansion-panel>
+  </mat-accordion>

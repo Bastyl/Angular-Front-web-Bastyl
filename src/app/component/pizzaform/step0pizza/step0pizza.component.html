@@ -2,7 +2,24 @@
 
     <mat-card class="imagemat">
 
-        <app-step0pizza></app-step0pizza>
-  
+        <div *ngIf="!opcionPedido && !opcionBoleta">
+            <div class="boton-transparente" (click)="hacerPedido()">Hacer un pedido</div>
+
+
+            <div class="boton-transparente" (click)="verBoletas()">Ver compras realizadas</div> 
+        </div>
+
+        <div *ngIf="opcionPedido" class="displayflex">
+            <div class="separator">
+                <div class="boton-transparente" (click)="volverInicio()"> Volver al inicio</div>
+            </div>
+            <app-step1pizza></app-step1pizza>
+        </div>
+
+        <div *ngIf="opcionBoleta">
+            <div class="boton-transparente" (click)="volverInicio()"> Volver al inicio</div>
+            <app-step2pizza></app-step2pizza>
+        </div>
+
     </mat-card>
-  </div>
+</div>
