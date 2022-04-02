@@ -276,3 +276,8 @@
   color: inherit;
   background: #3f51b5;
 }
+
+.obligatorio{
+  color:red;
+  font-size: small;
+}

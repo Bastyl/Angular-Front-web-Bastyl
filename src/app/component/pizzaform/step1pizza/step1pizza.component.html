@@ -1,250 +1,260 @@
+<div>
+  <div *ngIf="step1" class="formcontent">
+    <h1 class="titlefont">Arma tu pizza</h1>
+    <p>Elige los ingredientes que mas te gusten (vegetariano, Pepperoni, pollo o carne) y arma tu Pizza como tu
+      quieras.</p>
+    <hr>
 
-    
-    <div>
-      <div *ngIf="step1" class="formcontent">
-        <h1 class="titlefont">Arma tu pizza</h1>
-        <p>Elige los ingredientes que mas te gusten (vegetariano, Pepperoni, pollo o carne) y arma tu Pizza como tu
-          quieras.</p>
-        <hr>
-
-        <div class="content-section">
-          <div class="content-section-left">
-            <h2 class="titlefont">Tipo de masa</h2>
-          </div>
-          <div class="content-section-right">
-            (Obligatorio)
-          </div>
-        </div>
-        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-          [(ngModel)]="masaSelected">
-          <mat-radio-button class="example-radio-button" *ngFor="let masas of masa" [value]="masas" (click)="masaPrecio(masas)">
-            {{masas}}
-            <p></p>
-          </mat-radio-button>
-        </mat-radio-group>
-        <div class="content-section">
-          <div class="content-section-left"></div>
-          <div class="content-section-right">
-            <h3 class="titlefont">+ $2.990</h3>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class="content-section">
-          <div class="content-section-left">
-            <h2 class="titlefont">Elige tu proteina </h2>
-          </div>
-          <div class="content-section-right"> (Obligatorio)</div>
-        </div>
-
-        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-          [(ngModel)]="proteinaSelected">
-          <mat-radio-button class="example-radio-button" *ngFor="let proteinas of proteina" [value]="proteinas" (click)="proteinaPrecio(proteinas)">
-            {{proteinas}}
-            <p></p>
-          </mat-radio-button>
-        </mat-radio-group>
-        <div class="content-section">
-          <div class="content-section-left"></div>
-          <div class="content-section-right">
-            <h3 class="titlefont">+ $ 590 </h3>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class="content-section">
-          <div class="content-section-left">
-            <h2 class="titlefont">Elige tus agregados:</h2>
-          </div>
-          <div class="content-section-right">
-            (Opcional)
-          </div>
-        </div>
-
-        <p>
-          <mat-checkbox [(ngModel)]="agregado1" ngDefaultControl>Tomate Cherry</mat-checkbox>
-        </p>
-        <p>
-          <mat-checkbox [(ngModel)]="agregado2" ngDefaultControl>Jamon Cortado</mat-checkbox>
-        </p>
-        <p>
-          <mat-checkbox [(ngModel)]="agregado3" ngDefaultControl>Pimenton Verde</mat-checkbox>
-        </p>
-        <p>
-          <mat-checkbox [(ngModel)]="agregado4" ngDefaultControl>Cebolla Morada</mat-checkbox>
-        </p>
-        <p>
-          <mat-checkbox [(ngModel)]="agregado5" ngDefaultControl>Champiñones</mat-checkbox>
-        </p>
-        <p>
-          <mat-checkbox [(ngModel)]="agregado6" ngDefaultControl>Choclo</mat-checkbox>
-        </p>
-        <p>
-          <mat-checkbox [(ngModel)]="agregado7" ngDefaultControl>Piña en Cubos</mat-checkbox>
-        </p>
-        <p>
-          <mat-checkbox [(ngModel)]="agregado8" ngDefaultControl>Queso Parmesano</mat-checkbox>
-        </p>
-
-        <hr>
-
-        <div class="content-section">
-          <div class="content-section-left">
-            <h2 class="titlefont">Elige tu cup de salsa:</h2>
-          </div>
-          <div class="content-section-right">
-            (Obligatorio)
-          </div>
-        </div>
-        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-          [(ngModel)]="salsaSelected">
-          <mat-radio-button class="example-radio-button" *ngFor="let salsas of salsa" [value]="salsas">
-            {{salsas}}
-            <p></p>
-          </mat-radio-button>
-        </mat-radio-group>
-        <hr>
-
-        <div class="content-section">
-          <div class="content-section-left">
-            <h2 class="titlefont">Agrega bebida en lata:</h2>
-          </div>
-          <div class="content-section-right">
-            (Opcional)
-          </div>
-        </div>
-
-        <div class="example-button-container">
-          <button mat-mini-fab color="accent" (click)="quitarCocacola()">
-            -
-          </button>
-          {{cantCocacola}}
-          <button mat-mini-fab color="accent" (click)="agregarCocacola()">
-            +
-          </button>
-
-          Coca cola (350cc)
-        </div>
+    <div class="content-section">
+      <div class="content-section-left">
+        <h2 class="titlefont">Tipo de masa</h2>
+      </div>
+      <div class="content-section-right">
+        (Obligatorio)
+      </div>
+    </div>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="masaSelected">
+      <mat-radio-button class="example-radio-button" *ngFor="let masas of masa" [value]="masas"
+        (click)="masaPrecio(masas)">
+        {{masas}}
         <p></p>
-        <div class="example-button-container">
-          <button mat-mini-fab color="accent" (click)="quitarSprite()">
-            -
-          </button>
-          {{cantSprite}}
-          <button mat-mini-fab color="accent" (click)="agregarSprite()">
-            +
-          </button>
+      </mat-radio-button>
+    </mat-radio-group>
+    <div class="content-section">
+      <div class="content-section-left">
+        <p class="obligatorio" *ngIf="validatorMasa"> * este campo es obligatorio</p>
+      </div>
+      <div class="content-section-right">
+        <h3 class="titlefont">+ $2.990</h3>
+      </div>
+    </div>
 
-          Sprite (350cc)
+    <hr>
+
+    <div class="content-section">
+      <div class="content-section-left">
+        <h2 class="titlefont">Elige tu proteina </h2>
+      </div>
+      <div class="content-section-right"> (Obligatorio)</div>
+    </div>
+
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+      [(ngModel)]="proteinaSelected">
+      <mat-radio-button class="example-radio-button" *ngFor="let proteinas of proteina" [value]="proteinas"
+        (click)="proteinaPrecio(proteinas)">
+        {{proteinas}}
+        <p></p>
+      </mat-radio-button>
+    </mat-radio-group>
+    <div class="content-section">
+      <div class="content-section-left">
+        <p class="obligatorio" *ngIf="validatorProteina"> * este campo es obligatorio</p>
+      </div>
+      <div class="content-section-right">
+        <h3 class="titlefont">+ $ 590 </h3>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="content-section">
+      <div class="content-section-left">
+        <h2 class="titlefont">Elige tus agregados:</h2>
+      </div>
+      <div class="content-section-right">
+        (Opcional)
+      </div>
+    </div>
+
+    <p>
+      <mat-checkbox [(ngModel)]="agregado1" ngDefaultControl>Tomate Cherry</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox [(ngModel)]="agregado2" ngDefaultControl>Jamon Cortado</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox [(ngModel)]="agregado3" ngDefaultControl>Pimenton Verde</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox [(ngModel)]="agregado4" ngDefaultControl>Cebolla Morada</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox [(ngModel)]="agregado5" ngDefaultControl>Champiñones</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox [(ngModel)]="agregado6" ngDefaultControl>Choclo</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox [(ngModel)]="agregado7" ngDefaultControl>Piña en Cubos</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox [(ngModel)]="agregado8" ngDefaultControl>Queso Parmesano</mat-checkbox>
+    </p>
+
+    <hr>
+
+    <div class="content-section">
+      <div class="content-section-left">
+        <h2 class="titlefont">Elige tu cup de salsa:</h2>
+      </div>
+      <div class="content-section-right">
+        (Obligatorio)
+      </div>
+    </div>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+      [(ngModel)]="salsaSelected">
+      <mat-radio-button class="example-radio-button" *ngFor="let salsas of salsa" [value]="salsas">
+        {{salsas}}
+        <p></p>
+      </mat-radio-button>
+    </mat-radio-group>
+    <div class="content-section">
+      <div class="content-section-left">
+        <p class="obligatorio" *ngIf="validatorSalsa"> * este campo es obligatorio</p>
+      </div>
+      <div class="content-section-right">
+        <h3 class="titlefont"> </h3>
+      </div>
+    </div>
+    <hr>
+
+    <div class="content-section">
+      <div class="content-section-left">
+        <h2 class="titlefont">Agrega bebida en lata:</h2>
+      </div>
+      <div class="content-section-right">
+        (Opcional)
+      </div>
+    </div>
+
+    <div class="example-button-container">
+      <button mat-mini-fab color="accent" (click)="quitarCocacola()">
+        -
+      </button>
+      {{cantCocacola}}
+      <button mat-mini-fab color="accent" (click)="agregarCocacola()">
+        +
+      </button>
+
+      Coca cola (350cc)
+    </div>
+    <p></p>
+    <div class="example-button-container">
+      <button mat-mini-fab color="accent" (click)="quitarSprite()">
+        -
+      </button>
+      {{cantSprite}}
+      <button mat-mini-fab color="accent" (click)="agregarSprite()">
+        +
+      </button>
+
+      Sprite (350cc)
+    </div>
+    <div class="content-section">
+      <div class="content-section-left"></div>
+      <div class="content-section-right">
+        <h3 class="titlefont">+ $ 1.290 </h3>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="step2" class="formcontent">
+    <h1 class="titlefont">Tipo de Pedido</h1>
+    <p>Elige la opción de compra que desees. (De momento, tenemos deshabilitada la opción Retiro en Tienda</p>
+
+    <div class="tipocompra">
+      <div class="separator3"></div>
+      <div class="tipocompraconent">
+        <div class="boton-transparente" (click)="setDomicilio()">Domicilio</div>
+      </div>
+      <div class="tipocompraconent">
+        <div class="boton-desactivado">Retiro en Tienda</div>
+      </div>
+    </div>
+
+  </div>
+  <div *ngIf="step3 && domicilio" class="formcontent blackwords">
+    <h1 class="whitewords">Domicilio</h1>
+    <p class="whitewords">Por favor, ingrese su dirección para entregar el pedido.</p>
+
+    <div class="div1">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input [(ngModel)]="nombrePersona" matInput required minlength="1">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input [(ngModel)]="apellidoPersona" matInput required minlength="1">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Dirección</mat-label>
+        <textarea [(ngModel)]="direccion" matInput required minlength="1"></textarea>
+      </mat-form-field>
+      <div *ngIf="direccion"></div>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Celular</mat-label>
+        <span matPrefix>+56 &nbsp;</span>
+        <input [(ngModel)]="celular" type="tel" matInput placeholder="933736001" required minlength="9" maxlength="9">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Agregar Nota</mat-label>
+        <textarea [(ngModel)]="nota" matInput></textarea>
+      </mat-form-field>
+      <br>
+      <div class="div-button">
+        <div class="div-content-button">
+          <button mat-button color="primary" (click)="guardarPedido()">Confirmar Compra</button>
         </div>
-        <div class="content-section">
-          <div class="content-section-left"></div>
-          <div class="content-section-right">
-            <h3 class="titlefont">+ $ 1.290 </h3>
-          </div>
+        <div class="div-content-button">
+          <button mat-button color="primary">Deshacer Pedido</button>
         </div>
       </div>
-      <div *ngIf="step2" class="formcontent">
-        <h1 class="titlefont">Tipo de Pedido</h1>
-        <p>Elige la opción de compra que desees. (De momento, tenemos deshabilitada la opción Retiro en Tienda</p>
-        
-        <div class="tipocompra">
-          <div class="separator3"></div>
-          <div class="tipocompraconent">
-            <div class="boton-transparente" (click)="setDomicilio()">Domicilio</div>
-          </div>
-          <div class="tipocompraconent">
-            <div class="boton-desactivado" >Retiro en Tienda</div>
-          </div>
-        </div>
+      
+    </div>
+  </div>
 
+  <div *ngIf="step1" class="base">
+
+    <div class="leftdiv">
+      <div class="separator2">
       </div>
-      <div *ngIf="step3 && domicilio" class="formcontent blackwords">
-        <h1 class="whitewords">Domicilio</h1>
-        <p class="whitewords">Por favor, ingrese su dirección para entregar el pedido.</p>
-       
-        <div class="div1">
-          <mat-form-field appearance="fill">
-            <mat-label>Nombre</mat-label>
-            <input matInput>
-          </mat-form-field>
-          <br>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Apellido</mat-label>
-            <input matInput>
-          </mat-form-field>
-          <br>
-            <mat-form-field appearance="fill">
-              <mat-label>Dirección</mat-label>
-              <textarea matInput></textarea>
-            </mat-form-field>
-            <br>
-            <mat-form-field appearance="fill">
-              <mat-label>Celular</mat-label>
-              <span matPrefix>+56 &nbsp;</span>
-              <input type="tel" matInput placeholder="933736001">
-              <mat-icon matSuffix>mode_edit</mat-icon>
-            </mat-form-field>
-            <br>
-            <mat-form-field appearance="fill">
-              <mat-label>Agregar Nota</mat-label>
-              <textarea matInput></textarea>
-            </mat-form-field>
-            <br>
-
-            <div class="div-button">
-              <div class="div-content-button">
-                <button mat-button color="primary">Confirmar Compra</button>
-              </div>
-              <div class="div-content-button">
-                <button mat-button color="primary">Deshacer Pedido</button>
-              </div>
-            </div>
-
-        </div>
-      </div>
-
-      <div *ngIf="step1" class="base">
-        
-        <div class="leftdiv"> 
-          <div class="separator2">
-          </div>
-          <div class="totalchange">
-            <div class="sidetotalchange" (click)="lessTotal()"> - </div>
-            <div class="middletotalchange"> {{cantCompra}}</div>
-            <div class="sidetotalchange" (click)="plusTotal()"> + </div>
-          </div>
-
-        </div>
-
-
-        <div class="middiv" (click)="nextStep()">
-          <div class="separator2">
-            
-          </div>
-          <div > 
-            Agregar
-          </div>
-      </div>
-        <div class="rightdiv">
-          <div class="separator2">
-          </div>
-          <div>
-            ${{totalPago * cantCompra}}
-          </div>
-          
-        </div>
-      </div>
-
-      <div *ngIf="!step1" class="base">
-        
-        <div class="leftdiv2" (click)="backStep()">
-          <mat-icon>keyboard_backspace</mat-icon>
-        </div>
+      <div class="totalchange">
+        <div class="sidetotalchange" (click)="lessTotal()"> - </div>
+        <div class="middletotalchange"> {{cantCompra}}</div>
+        <div class="sidetotalchange" (click)="plusTotal()"> + </div>
       </div>
 
     </div>
 
+
+    <div class="middiv" (click)="nextStep()">
+      <div class="separator2">
+
+      </div>
+      <div>
+        Agregar
+      </div>
+    </div>
+    <div class="rightdiv">
+      <div class="separator2">
+      </div>
+      <div>
+        ${{totalPago * cantCompra}}
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="!step1" class="base">
+
+    <div class="leftdiv2" (click)="backStep()">
+      <mat-icon>keyboard_backspace</mat-icon>
+    </div>
+  </div>
+
+</div>

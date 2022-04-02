@@ -2,6 +2,6 @@ export const environment: {
   production: boolean;
   backendUrl: string;
 } = {
-  backendUrl: "http://test3.brazilsouth.azurecontainer.io",
+  backendUrl: "https://localhost:7213",
   production: false
 }

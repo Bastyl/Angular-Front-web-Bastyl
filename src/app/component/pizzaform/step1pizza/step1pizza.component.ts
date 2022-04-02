@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormsModule} from '@angular/forms';
-
-
+import {FormControl, FormGroup, FormsModule, Validators} from '@angular/forms';
+import { PizzaserviceService } from 'src/app/services/pizzaservice.service';
 
 @Component({
   selector: 'app-step1pizza',
@@ -10,14 +9,22 @@ import {FormsModule} from '@angular/forms';
 })
 export class Step1pizzaComponent implements OnInit {
 
-  masaSelected: string | undefined;
+  nombrePersona: string;
+  apellidoPersona: string;
+  celular: string;
+  direccion: string;
+  nota: string;
+
+  masaSelected: string;
   masa: string[] = ['Masa tradicional', 'Masa delgada', 'Borde de queso'];
 
-  proteinaSelected: string | undefined;
+  proteinaSelected: string;
   proteina: string[] = ['Ribs', 'Pepperoni', 'Carne','Pollo','Pollo BBQ','Sin Proteina'];
 
-  salsaSelected: string | undefined;
+  salsaSelected: string;
   salsa: string[] = ['Salsa BBQ', 'Salsa de tomate', 'Crema'];
+
+
 
   cantCocacola: number = 0;
   cantSprite: number = 0;
@@ -31,6 +38,9 @@ export class Step1pizzaComponent implements OnInit {
   agregado7 = false;
   agregado8 = false;
 
+  agregados: string[] = ["iniciador"];
+  tipo: string;
+
   step1: boolean = true;
   step2: boolean = false;
   step3: boolean = false;
@@ -41,10 +51,14 @@ export class Step1pizzaComponent implements OnInit {
   cantCompra = 1;
   totalPago: number = 6990;
 
+  validatorMasa = false;
+  validatorSalsa = false;
+  validatorProteina = false;
 
-  constructor() { 
+  constructor(private PizzaService: PizzaserviceService) { 
   }
   ngOnInit(): void {
+
   }
 
   nextStep(): void{
@@ -53,8 +67,28 @@ export class Step1pizzaComponent implements OnInit {
       this.step3 = true;
     }
     if(this.step1){
-      this.step1 = false;
-      this.step2 = true;
+      if(this.masaSelected == undefined){
+        this.validatorMasa = true;
+      }else{
+        this.validatorMasa = false;
+      }
+
+      if(this.salsaSelected == undefined){
+        this.validatorSalsa = true;
+      }else{
+        this.validatorSalsa = false;
+      }
+
+      if(this.proteinaSelected == undefined){
+        this.validatorProteina = true;
+      }else{
+        this.validatorProteina = false;
+      }
+
+      if(this.masaSelected != undefined && this.salsaSelected != undefined && this.proteinaSelected != undefined){
+        this.step1 = false;
+        this.step2 = true;
+      }
     }
   }
 
@@ -142,4 +176,67 @@ export class Step1pizzaComponent implements OnInit {
     this.step2 = false;
   }
 
+  guardarPedido(){
+    if(this.nombrePersona != undefined && this.apellidoPersona != undefined && this.direccion != undefined && this.celular != undefined){
+      this.agregados.pop();
+      if(this.agregado1){
+        this.agregados.push("Tomate Cherry")
+      }
+      if(this.agregado2){
+        this.agregados.push("Jamon Cortado")
+      }
+      if(this.agregado3){
+        this.agregados.push("Pimenton Verde")
+      }
+      if(this.agregado4){
+        this.agregados.push("Cebolla Morada")
+      }
+      if(this.agregado5){
+        this.agregados.push("Champiñones")
+      }
+      if(this.agregado6){
+        this.agregados.push("Choclo")
+      }
+      if(this.agregado7){
+        this.agregados.push("Piña en Cubos")
+      }
+      if(this.agregado8){
+        this.agregados.push("Queso Parmesano")
+      }
+  
+      if(this.domicilio){
+        this.tipo = "Domicilio";
+      }else{
+        this.tipo = "Retiro Local";
+      }
+
+      if(this.nota == undefined){
+        this.nota = "";
+      }
+      this.PizzaService.addData(
+      this.nombrePersona,
+      this.apellidoPersona,
+      this.direccion,
+      this.celular,
+      this.nota,
+      this.masaSelected,
+      this.proteinaSelected,
+      this.salsaSelected,
+      this.cantCocacola,
+      this.cantSprite,
+      this.agregados,
+      this.tipo,
+      this.cantCompra,
+      this.totalPago).subscribe(data =>{
+        console.log(data)
+      },err=>{
+        console.log(err)
+      })
+    }
+
+
   }
+
+  }
+
+

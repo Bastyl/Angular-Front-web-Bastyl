@@ -3,35 +3,39 @@
                          (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
         <mat-panel-title class="fontstyle">
-          Titular:{{" "+bol.Nombre+" "}}{{bol.Apellido}}
+          Titular:{{" "+bol.nombrePersona+" "}}{{bol.apellidoPersona}}
         </mat-panel-title>
         <mat-panel-description class="fontstyle">
-          Fecha:{{" "+bol.Fecha+" "}}Pedido: {{" "+bol.Tipo}}
+          Fecha:{{" "+bol.fecha+" "}}Pedido: {{" "+bol.tipo}}
         </mat-panel-description>
       </mat-expansion-panel-header>
       <div class="contentpanel">
           <div class="paneldiv">
             <p>Tipo de pizza:</p>
             <ul>
-                <li>Tipo de masa: {{bol.Masa}}</li>
-                <li>Tipo de Proteina:{{bol.Proteina}}</li>
-                <li>Tipo de Salsa: {{bol.Salsa}}</li>
-                <li>Cocacola: x{{bol.Cocacola}}</li>
-                <li>Sprite: x{{bol.Sprite}}</li>
+                <li>Tipo de masa: {{bol.masa}}</li>
+                <li>Tipo de Proteina:{{bol.proteina}}</li>
+                <li>Tipo de Salsa: {{bol.salsa}}</li>
+                <li>Cocacola: x{{bol.cocacola}}</li>
+                <li>Sprite: x{{bol.sprite}}</li>
             </ul>
           </div>
           <div class="paneldiv">
             <p>Ingredientes de la pizza:</p>
-            <ul *ngFor="let ing of bol.Agregados">
+            <ul *ngFor="let ing of bol.agregados">
                 <li>{{ing}}</li>
             </ul>
           </div>
       </div>
-      <p>Cantidad del pedido: x{{bol.Cantidad}}</p>
-      <p>Direccion: {{bol.Direccion}}</p>
-      <p>Celular: {{bol.Celular}}</p>
-      <p>Nota: {{bol.Nota}}</p>
-      <h2>Monto: ${{bol.Monto}}</h2>
+      <p>Cantidad del pedido: x{{bol.cantidad}}</p>
+      <p>Direccion: {{bol.direccion}}</p>
+      <p>Celular: {{bol.celular}}</p>
+      <p>Nota: {{bol.nota}}</p>
+      <h2>Monto: ${{bol.monto}}</h2>
+      <br>
+      <div class="div-content-button">
+        <button mat-button class="divbuttonborrar" (click)="deleteBoleta(bol.id)">Eliminar boleta</button>
+      </div>
 
     </mat-expansion-panel>
   </mat-accordion>

@@ -13,6 +13,9 @@ export class Step0pizzaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    var date = new Date;
+    var date_text = date.toLocaleString().split(",")
+    console.log(date_text[0],"esto es date");
   }
 
   hacerPedido(){
