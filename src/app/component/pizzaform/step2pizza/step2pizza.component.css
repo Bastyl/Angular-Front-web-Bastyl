@@ -29,3 +29,12 @@
 .paneldiv{
     width: 50%;
 }
+
+.div-content-button{
+    padding-right: 15px;
+  }
+
+.divbuttonborrar{
+    background-color: white;
+    color: black;
+}

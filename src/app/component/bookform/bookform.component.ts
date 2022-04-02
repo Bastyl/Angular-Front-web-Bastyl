@@ -69,7 +69,7 @@ export class BookformComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.FirstTestService.getData().subscribe(data=>{console.log(data)});
+    //this.FirstTestService.getData().subscribe(data=>{console.log(data)});
   }
 
   ngAfterViewInit(): void {

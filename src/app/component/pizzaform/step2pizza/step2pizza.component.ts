@@ -1,4 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { PizzaserviceService } from 'src/app/services/pizzaservice.service';
+
+export interface pizzaFormat {
+  id: string,
+  nombrePersona: string,
+  apellidoPersona: string,
+  celular: string,
+  direccion: string,
+  nota: string,
+  masa: string,
+  proteina: string,
+  salsa: string,
+  agregados: string[],
+  cocacola: number,
+  sprite: number,
+  cantidad: number,
+  monto: number,
+  tipo: string,
+  fecha: string
+}
 
 @Component({
   selector: 'app-step2pizza',
@@ -6,48 +26,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./step2pizza.component.css']
 })
 export class Step2pizzaComponent implements OnInit {
-  panelOpenState = false;
-  value = [1,2,3,4,5];
+panelOpenState = false;
+boleta: pizzaFormat[] | undefined;
 
-  boleta =     [{
-    "id": "623a7bd9ca699374f1de1658",
-    "Masa": "Masa tradicional",
-    "Proteina": "Carne",
-    "Agregados": ["Jamon Cortado", "Pimenton Verde", "Cebolla Morada", "Choclo"],
-    "Salsa": "Salsa BBQ",
-    "Cocacola": 3,
-    "Sprite": 1,
-    "Cantidad": 1,
-    "Tipo": "Domicilio",
-    "Nombre": "Bastian",
-    "Apellido": "Lopez",
-    "Direccion": "Avenida la florida 9650 casa 23",
-    "Celular": 933736001,
-    "Nota": "Pago con billete de 10 mil",
-    "Fecha": "03-02-2022",
-    "Monto": 31950
-},
-{
-  "id": "623a7bd9ca699374f1de1658",
-  "Masa": "Masa Normal",
-  "Proteina": "Pollo",
-  "Agregados": ["Jamon Cortado", "Pimenton Verde", "Cebolla Morada", "Choclo"],
-  "Salsa": "Crema",
-  "Cocacola": 0,
-  "Sprite": 2,
-  "Cantidad": 2,
-  "Tipo": "Domicilio",
-  "Nombre": "Agustin",
-  "Apellido": "Orellana",
-  "Direccion": "Avenida Macul 4543",
-  "Celular": 933736001,
-  "Nota": "Recibe mi hermano bastian",
-  "Fecha": "04-02-2022",
-  "Monto": 25490
-}]
-  constructor() { }
+  constructor(private PizzaService: PizzaserviceService) { }
 
   ngOnInit(): void {
+    this.PizzaService.getData().subscribe((data:any)=>{
+      this.boleta = data;
+      console.log(this.boleta,"Esto trae el servicio")
+    },err =>{
+      console.log("Error");
+    })
+  }
+
+  deleteBoleta(id: string){
+    this.PizzaService.delData(id).subscribe((data:any)=>{
+      console.log(data,"Esto trae el servicio")
+    },err =>{
+      console.log(err,"Error");
+    });
   }
 
 }
