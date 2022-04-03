@@ -1,6 +1,9 @@
+import { _resolveDirectionality } from '@angular/cdk/bidi/directionality';
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, FormsModule, Validators} from '@angular/forms';
 import { PizzaserviceService } from 'src/app/services/pizzaservice.service';
+import { Router } from '@angular/router';
+import { Step0pizzaComponent } from '../step0pizza/step0pizza.component';
 
 @Component({
   selector: 'app-step1pizza',
@@ -8,6 +11,8 @@ import { PizzaserviceService } from 'src/app/services/pizzaservice.service';
   styleUrls: ['./step1pizza.component.css']
 })
 export class Step1pizzaComponent implements OnInit {
+
+  loading: boolean = false;
 
   nombrePersona: string;
   apellidoPersona: string;
@@ -55,10 +60,11 @@ export class Step1pizzaComponent implements OnInit {
   validatorSalsa = false;
   validatorProteina = false;
 
-  constructor(private PizzaService: PizzaserviceService) { 
+  constructor(private PizzaService: PizzaserviceService, private router: Router,
+    private Step0pizzaComponent: Step0pizzaComponent) { 
   }
   ngOnInit(): void {
-
+    
   }
 
   nextStep(): void{
@@ -178,6 +184,7 @@ export class Step1pizzaComponent implements OnInit {
 
   guardarPedido(){
     if(this.nombrePersona != undefined && this.apellidoPersona != undefined && this.direccion != undefined && this.celular != undefined){
+      this.loading = true;
       this.agregados.pop();
       if(this.agregado1){
         this.agregados.push("Tomate Cherry")
@@ -229,12 +236,20 @@ export class Step1pizzaComponent implements OnInit {
       this.cantCompra,
       this.totalPago).subscribe(data =>{
         console.log(data)
+        this.loading = false;
+        this.Step0pizzaComponent.volverInicio();
       },err=>{
         console.log(err)
+        this.loading = false;
+        this.Step0pizzaComponent.volverInicio();
       })
     }
 
 
+  }
+
+  resetAll(){
+    this.Step0pizzaComponent.volverInicio();
   }
 
   }

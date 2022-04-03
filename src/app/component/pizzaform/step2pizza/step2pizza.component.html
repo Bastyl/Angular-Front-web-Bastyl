@@ -1,3 +1,8 @@
+
+<div *ngIf="loading" class="divcontainer">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="!loading">
 <mat-accordion *ngFor="let bol of boleta">
     <mat-expansion-panel class="matacordionwidth" (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
@@ -39,3 +44,4 @@
 
     </mat-expansion-panel>
   </mat-accordion>
+</div>
