@@ -32,6 +32,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { Step0pizzaComponent } from './component/pizzaform/step0pizza/step0pizza.component';
 import { Step2pizzaComponent } from './component/pizzaform/step2pizza/step2pizza.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatRadioModule,
     ReactiveFormsModule,
     MatCheckboxModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
