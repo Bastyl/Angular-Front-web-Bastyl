@@ -1,85 +1,228 @@
-<div class="bodyimage">
-    <div class="separator"></div>
-    <p class="title">
-        Hola, mi nombre es Bastian
-    </p>
-    <p class="title">
-        y soy desarrollador web.
-    </p>
-    <a class="boton-transparente" href="home">Ver Resumen</a>
+<body>
+    <div class="bodyimage ">
+        <div class="separator"></div>
+        <p class="title">
+            Hola, mi nombre es Bastian
+        </p>
+        <p class="title">
+            y soy desarrollador web.
+        </p>
+        <label class="boton-transparente" (click)="scroll('resumen')">Ver Resumen</label>
+
+    </div>
+
+    <div class="bgbody">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 well"> <img src="./../../../assets/images/yo2.png" class="img-circle" height="300"
+                    width="auto"></div>
+            <div class="col-md-8 well">
+                <h1 class="title2"> Acerca de mi</h1>
+                <p class="text2">
+                    Mi nombre es Bastian Lopez y actualmente me encuentro egresado de la carrera Ingeniería Civil en
+                    Informática y Telecomunicaciones en la Universidad Diego Portales. Tengo 27 años y mis hobbies son
+                    jugar
+                    fútbol, leer y programar. Me considero una persona sociable, responsable y que se toma muy en serio
+                    su
+                    trabajo. Tengo altas aptitudes comunicativas, habilidad que aprendí gracias a las diversas
+                    ayudantías
+                    que impartí en la universidad, pudiendo motivar, interesar y participar a mi interlocutor, como
+                    también
+                    expresar mis ideas de una manera simple y entendible. Soy una persona que se adapta fácilmente a los
+                    equipos de trabajo, como también a las tareas que se me asignan.
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-4 well"> <img [src]="actualImage" height="300" width="auto"></div>
+            <div class="col-md-8 well">
+                <h1 class="title2"> Acerca de este sitio</h1>
+                <p class="text2">
+                    Este sitio fue creado 100% por mi y tiene como propósito el poder mostrar un poco de mis habilidades
+                    en
+                    el desarrollo web. Se compone de una pequeña presentación sobre mí, además de distintas
+                    funcionalidades
+                    que se pueden aplicar con angular 13 y microservicios .NET core 6.
+                </p>
+                <p class="text2">Las principales herramientas utilizadas para la construcción de este portafolio fueron:
+                </p>
+                <ul>
+                    <li class="text2">Angular 13</li>
+                    <li class="text2">Microservicios .NET core 6</li>
+                    <li class="text2">Mongodb</li>
+                </ul>
+                <p class="text2">Algunas librerías utilizadas fueron:</p>
+                <ul>
+                    <li class="text2">Angular Material</li>
+                    <li class="text2">Bootstrap</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <h1 class="title2"> Skills</h1>
+        <div class="row">
+            <div class="col-md-2 well">
+                <img src="./../../../assets/images/angular.png" class="img-circle" height="100" width="auto">
+            </div>
+            <div class="col-md-2 well">
+                <p class="text2">Angular 7 y 13</p>
+            </div>
+            <div class="align-middle col-md-6 well">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 well">
+                <img src="./../../../assets/images/htmlcss.png" class="img-circle" height="100" width="auto">
+            </div>
+            <div class="col-md-2 well">
+                <p class="text2">HTML y CSS</p>
+            </div>
+            <div class="align-middle col-md-6 well">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-2 well">
+                <img src="./../../../assets/images/js.png" class="img-circle" height="100" width="auto">
+            </div>
+            <div class="col-md-2 well">
+                <p class="text2">JavaScript</p>
+            </div>
+            <div class="align-middle col-md-6 well">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-2 well">
+                <img src="./../../../assets/images/netcore.png" class="img-circle" height="100" width="auto">
+            </div>
+            <div class="col-md-2 well">
+                <p class="text2">Microservicios .NET Core 6 </p>
+            </div>
+            <div class="align-middle col-md-6 well">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-2 well">
+                <img src="./../../../assets/images/sql.png" class="img-circle" height="100" width="auto">
+            </div>
+            <div class="col-md-2 well">
+                <p class="text2">SQL </p>
+            </div>
+            <div class="align-middle col-md-6 well">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-2 well">
+                <img src="./../../../assets/images/mongodblogo.png" class="img-circle" height="100" width="auto">
+            </div>
+            <div class="col-md-2 well">
+                <p class="text2">MongoDB </p>
+            </div>
+            <div class="align-middle col-md-6 well">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
-
-
+    <!--
 <div class="body">
-    <div class="resumen">
+    <div id="resumen" class="resumen">
         <div class="imagen-resumen">
             <img class="imagen1" src="./../../../assets/images/yo.jpeg" height="100%" width="auto">
         </div>
         <div class="texto-resumen">
-            <h1 class="title2"> Acerca de mi</h1>
-            <p class="text2">
-                Mi nombre es Bastian Lopez y actualmente me encuentro egresado de la carrera Ingeniería Civil en
-                Informática y Telecomunicaciones en la Universidad Diego Portales. Tengo 27 años y mis hobbies son jugar
-                fútbol, leer y programar. Me considero una persona sociable, responsable y que se toma muy en serio su
-                trabajo. Tengo altas aptitudes comunicativas, habilidad que aprendí gracias a las diversas ayudantías
-                que impartí en la universidad, pudiendo motivar, interesar y participar a mi interlocutor, como también
-                expresar mis ideas de una manera simple y entendible. Soy una persona que se adapta fácilmente a los
-                equipos de trabajo, como también a las tareas que se me asignan.
-            </p>
+            <mat-card class="matcard">
+                <h1 class="title2"> Acerca de mi</h1>
+                <p class="text2">
+                    Mi nombre es Bastian Lopez y actualmente me encuentro egresado de la carrera Ingeniería Civil en
+                    Informática y Telecomunicaciones en la Universidad Diego Portales. Tengo 27 años y mis hobbies son
+                    jugar
+                    fútbol, leer y programar. Me considero una persona sociable, responsable y que se toma muy en serio
+                    su
+                    trabajo. Tengo altas aptitudes comunicativas, habilidad que aprendí gracias a las diversas
+                    ayudantías
+                    que impartí en la universidad, pudiendo motivar, interesar y participar a mi interlocutor, como
+                    también
+                    expresar mis ideas de una manera simple y entendible. Soy una persona que se adapta fácilmente a los
+                    equipos de trabajo, como también a las tareas que se me asignan.
+                </p>
+            </mat-card>
         </div>
     </div>
 
     <div class="resumen">
         <div class="imagen-resumen">
-            <div class="top-content">
-                <img src="./../../../assets/images/angular.png" height="90%" width="auto">
-                <img src="./../../../assets/images/netcore.png" height="90%" width="auto">
-            </div>
-            <div class="bot-content">
-                <img src="./../../../assets/images/mongo.png" height="60%" width="auto">
-            </div>
-
+            <img [src]="actualImage" height="90%" width="auto">
         </div>
         <div class="texto-resumen">
-            <h1 class="title2"> Acerca de este sitio</h1>
-            <p class="text2">
-                Este sitio fue creado 100% por mi y tiene como propósito el poder mostrar un poco de mis habilidades en
-                el desarrollo web. Se compone de una pequeña presentación sobre mí, además de distintas funcionalidades
-                que se pueden aplicar con angular 13 y microservicios .NET core 6.
-            </p>
-            <p class="text2">Las principales herramientas utilizadas para la construcción de este portafolio fueron:</p>
-            <ul>
-                <li class="text2">Angular 13</li>
-                <li class="text2">Microservicios .NET core 6</li>
-                <li class="text2">Mongodb</li>
-            </ul>
-            <p class="text2">Algunas librerías utilizadas fueron:</p>
-            <ul>
-                <li class="text2">Angular Material</li>
-                <li class="text2">Bootstrap</li>
-            </ul>
+            <mat-card class="matcard">
+                <h1 class="title2"> Acerca de este sitio</h1>
+                <p class="text2">
+                    Este sitio fue creado 100% por mi y tiene como propósito el poder mostrar un poco de mis habilidades
+                    en
+                    el desarrollo web. Se compone de una pequeña presentación sobre mí, además de distintas
+                    funcionalidades
+                    que se pueden aplicar con angular 13 y microservicios .NET core 6.
+                </p>
+                <p class="text2">Las principales herramientas utilizadas para la construcción de este portafolio fueron:
+                </p>
+                <ul>
+                    <li class="text2">Angular 13</li>
+                    <li class="text2">Microservicios .NET core 6</li>
+                    <li class="text2">Mongodb</li>
+                </ul>
+                <p class="text2">Algunas librerías utilizadas fueron:</p>
+                <ul>
+                    <li class="text2">Angular Material</li>
+                    <li class="text2">Bootstrap</li>
+                </ul>
+            </mat-card>
         </div>
     </div>
 
-    <div class="habilidades">
+    
+        <div class="habilidades">
+            <mat-card class="matcard-skill">
+            <h1 class="title2"> Mis Habilidades</h1>
 
-        <h1 class="title2"> Mis Habilidades</h1>
-
-        <ul id="lista1">
-            <li>
-                Ir al blog
-            </li>
-            <li>
-                Ir a Google
-            </li>
-            <li>
-                Ir a Yahoo
-            </li>
-            <li>
-                Ir a Bing
-            </li>
-        </ul>
-    </div>
-
-</div>
+        </mat-card>
+        </div>
+-->
