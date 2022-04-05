@@ -1,14 +1,14 @@
 
 .rightcontact {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 	justify-content: center;
 	text-align: center;
 }
 
 .leftcontact {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 	justify-content: center;
 	text-align: center;
 }
@@ -61,7 +61,7 @@ nav a:hover {
 }
 
 .contactbar {
-    background-color: #131314;
+    background-color: #3b3b73;
     height: 50px;
     text-align: center;
     display: flex;
@@ -69,3 +69,26 @@ nav a:hover {
     justify-content:space-between;
 	
 }
+
+ul {
+	list-style-type: none;
+  }
+  
+  li {
+	color: white;
+	float: left;
+	margin-right: 10px;
+	padding: 0 4px;
+	font-weight: 100;
+	font-family: "Segoe UI",Helvetica,Arial,sans-serif;
+  }
+
+  li:hover {
+	text-decoration: underline;
+  }
+
+.contentli{
+	  height: 100%;
+	  background-color: #000;
+}
+
